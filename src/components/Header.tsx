@@ -11,12 +11,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
+  // Updated navLinks with Discord URL for contact
   const navLinks = [
     { name: t("home"), path: "/" },
     { name: t("features"), path: "/features" },
     { name: t("pricing"), path: "/pricing" },
     { name: t("testimonials"), path: "/testimonials" },
-    { name: t("contact"), path: "/contact" },
+    { name: t("contact"), path: "https://discord.gg/hEFkEPeNMH", external: true },
   ];
 
   const languages = [
@@ -45,13 +46,25 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <Link 
-              key={link.path}
-              to={link.path}
-              className="text-foreground hover:text-purple-light transition-colors"
-            >
-              {link.name}
-            </Link>
+            link.external ? (
+              <a 
+                key={link.path}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-purple-light transition-colors"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link 
+                key={link.path}
+                to={link.path}
+                className="text-foreground hover:text-purple-light transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </nav>
         
@@ -92,9 +105,9 @@ const Header = () => {
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           
-          {/* CTA Button */}
-          <Link to="/pricing" className="btn-premium">
-            {t("get_started")}
+          {/* Updated CTA Button */}
+          <Link to="/dashboard" className="btn-premium">
+            Dashboard
           </Link>
         </div>
         
@@ -114,14 +127,27 @@ const Header = () => {
             
             <nav className="flex flex-col space-y-5 mb-8">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.path}
-                  to={link.path}
-                  className="text-foreground hover:text-purple-light transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a 
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-purple-light transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link 
+                    key={link.path}
+                    to={link.path}
+                    className="text-foreground hover:text-purple-light transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
             
@@ -157,13 +183,13 @@ const Header = () => {
                 </button>
               </div>
               
-              {/* Mobile CTA */}
+              {/* Updated Mobile CTA */}
               <Link 
-                to="/pricing" 
+                to="/dashboard" 
                 className="btn-premium w-full text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t("get_started")}
+                Dashboard
               </Link>
             </div>
           </div>

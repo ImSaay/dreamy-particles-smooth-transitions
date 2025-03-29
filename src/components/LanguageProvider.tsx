@@ -40,7 +40,11 @@ const translations: Record<Language, Record<string, string>> = {
     "extended_warranty": "Garantia estendida",
     "checkout": "Finalizar Compra",
     "theme": "Tema",
-    "language": "Idioma"
+    "language": "Idioma",
+    "dashboard": "Painel de Controle",
+    "login_required": "Login Necessário",
+    "login_with_discord": "Entrar com Discord",
+    "discord_login_info": "Por favor, faça login com sua conta do Discord para acessar o painel de controle."
   },
   "en-US": {
     "home": "Home",
@@ -66,7 +70,11 @@ const translations: Record<Language, Record<string, string>> = {
     "extended_warranty": "Extended warranty",
     "checkout": "Checkout",
     "theme": "Theme",
-    "language": "Language"
+    "language": "Language",
+    "dashboard": "Dashboard",
+    "login_required": "Login Required",
+    "login_with_discord": "Login with Discord",
+    "discord_login_info": "Please login with your Discord account to access the control panel."
   },
   "es-ES": {
     "home": "Inicio",
@@ -92,7 +100,11 @@ const translations: Record<Language, Record<string, string>> = {
     "extended_warranty": "Garantía extendida",
     "checkout": "Finalizar Compra",
     "theme": "Tema",
-    "language": "Idioma"
+    "language": "Idioma",
+    "dashboard": "Panel de Control",
+    "login_required": "Inicio de Sesión Requerido",
+    "login_with_discord": "Iniciar con Discord",
+    "discord_login_info": "Por favor, inicie sesión con su cuenta de Discord para acceder al panel de control."
   }
 };
 

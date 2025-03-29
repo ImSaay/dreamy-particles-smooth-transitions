@@ -131,10 +131,15 @@ const ReviewSection = () => {
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {displayedReviews.map((review) => (
+              {displayedReviews.map((review, index) => (
                 <div
                   key={review.id}
-                  className="review-card"
+                  className="review-card bg-card p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:translate-y-[-5px]"
+                  style={{ 
+                    animationName: 'none', 
+                    transform: `translateY(${Math.sin(index * 0.5) * 5}px)`,
+                    transition: 'transform 0.5s ease, box-shadow 0.5s ease'
+                  }}
                 >
                   <div className="review-meta">
                     <img 
@@ -160,7 +165,7 @@ const ReviewSection = () => {
             {/* Pagination Controls */}
             <div className="flex justify-center space-x-4 items-center">
               <button 
-                className={`p-2 rounded-full ${
+                className={`p-2 rounded-full transition-colors duration-300 ${
                   currentPage === 0 
                     ? 'text-muted-foreground cursor-not-allowed' 
                     : 'hover:bg-muted text-foreground'
@@ -176,7 +181,7 @@ const ReviewSection = () => {
               </span>
               
               <button 
-                className={`p-2 rounded-full ${
+                className={`p-2 rounded-full transition-colors duration-300 ${
                   currentPage >= totalPages - 1 
                     ? 'text-muted-foreground cursor-not-allowed' 
                     : 'hover:bg-muted text-foreground'

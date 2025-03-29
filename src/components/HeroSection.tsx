@@ -23,12 +23,12 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                to="/pricing" 
+                to="/dashboard" 
                 className="btn-premium flex items-center justify-center gap-2"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
-                {t("get_started")}
+                Dashboard
                 <ArrowRight 
                   size={18} 
                   className={`transition-transform duration-300 ${isHovering ? 'translate-x-1' : ''}`}
